@@ -14,11 +14,20 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       colors: {
-        'accent-1': '#FAFAFA',
-        'accent-2': '#EAEAEA',
-        'accent-7': '#333',
-        success: '#0070f3',
-        cyan: '#79FFE1',
+        dark: {
+          primary: '#005f73',
+          secondary: '#0a9396',
+          accent: '#94d2bd',
+          neutral: '#EAEAEA',
+          'base-100': '#282828',
+        },
+        light: {
+          primary: '#0070f3',
+          secondary: '#79FFE1',
+          accent: '#333',
+          neutral: '#EAEAEA',
+          'base-100': '#FAFAFA',
+        },
       },
       spacing: {
         28: '7rem',
