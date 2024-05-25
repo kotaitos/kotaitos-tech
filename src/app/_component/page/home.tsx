@@ -12,7 +12,7 @@ export default function Home() {
   const morePosts = allPosts.slice(1);
 
   return (
-    <main>
+    <main className='md:px-80'>
       <Container>
         <Intro />
         <About />
