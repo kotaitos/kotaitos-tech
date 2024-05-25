@@ -1,7 +1,7 @@
-import Container from '@/app/_components/container';
-import { HeroPost } from '@/app/_components/hero-post';
-import { Intro } from '@/app/_components/intro';
-import { MoreStories } from '@/app/_components/more-stories';
+import Container from '@/app/_component/template/container';
+import { HeroPost } from '@/app/_component/organism/hero-post';
+import { Intro } from '@/app/_component/organism/intro';
+import { MoreStories } from '@/app/_component/organism/more-stories';
 import { getAllPosts } from '@/lib/api';
 
 export default function Index() {
