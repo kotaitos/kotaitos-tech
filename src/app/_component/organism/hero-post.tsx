@@ -24,7 +24,7 @@ export function HeroPost({
   return (
     <section>
       <h2 className='mb-8 text-2xl md:text-4xl font-bold tracking-tighter leading-tight'>
-        Recent Post
+        🕐 Recent Post
       </h2>
       <div className='mb-8 md:mb-16'>
         <CoverImage title={title} src={coverImage} slug={slug} />
