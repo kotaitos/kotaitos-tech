@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation';
 import { getAllPosts, getPostBySlug } from '@/lib/api';
 import { CMS_NAME } from '@/lib/constants';
 import markdownToHtml from '@/lib/markdownToHtml';
-import Alert from '@/app/_component/organism/alert';
 import Container from '@/app/_component/template/container';
 import Header from '@/app/_component/organism/header';
 import { PostBody } from '@/app/_component/organism/post-body';
@@ -20,7 +19,6 @@ export default async function Post({ params }: Params) {
 
   return (
     <main>
-      <Alert preview={post.preview} />
       <Container>
         <Header />
         <article className='mb-32'>
