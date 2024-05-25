@@ -1,8 +1,8 @@
-import { type Author } from '@/interfaces/author';
+import { type Author } from '@/interface/author';
 import Link from 'next/link';
-import Avatar from './avatar';
-import CoverImage from './cover-image';
-import DateFormatter from './date-formatter';
+import Avatar from '../atom/avatar';
+import CoverImage from '../molecule/cover-image';
+import DateFormatter from '../atom/date-formatter';
 
 type Props = {
   title: string;
@@ -27,7 +27,7 @@ export function PostPreview({
         <CoverImage slug={slug} title={title} src={coverImage} />
       </div>
       <h3 className='text-3xl mb-3 leading-snug'>
-        <Link href={`/posts/${slug}`} className='hover:underline'>
+        <Link href={`/post/${slug}`} className='hover:underline'>
           {title}
         </Link>
       </h3>
