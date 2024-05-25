@@ -12,7 +12,7 @@ export default function Home() {
   const morePosts = allPosts.slice(1);
 
   return (
-    <main className='md:px-80'>
+    <main className='max-w-screen-lg mx-auto'>
       <Container>
         <Intro />
         <About />
