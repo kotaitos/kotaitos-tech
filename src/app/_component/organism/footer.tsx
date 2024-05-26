@@ -1,5 +1,4 @@
 import Container from '@/app/_component/template/container';
-import { EXAMPLE_PATH } from '@/lib/constants';
 import { FaTwitter, FaGithub } from 'react-icons/fa';
 
 export function Footer() {
