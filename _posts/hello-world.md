@@ -1,5 +1,5 @@
 ---
-title: '開発ブログ作りました'
+title: '開発ブログ始めました'
 excerpt: ''
 coverImage: '/assets/blog/hello-world/cover.jpg'
 date: '2024-05-25'
