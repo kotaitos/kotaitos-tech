@@ -1,6 +1,6 @@
 ---
 title: '開発ブログ始めました'
-excerpt: ''
+excerpt: '開発ブログ始めたので使った技術などについて紹介します。'
 coverImage: '/assets/blog/hello-world/cover.jpeg'
 date: '2024-05-25'
 author:
