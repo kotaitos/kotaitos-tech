@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer className='max-w-screen-lg mx-auto border-t'>
       <Container>
-        <div className='py-28 flex flex-row justify-center'>
+        <div className='py-14 flex flex-row justify-center'>
           <a
             href={'https://github.com/kotaitos'}
             className='text-xl sm:text-2xl md:text-3xl lg:text-4xl mx-3 font-bold hover:underline'
@@ -19,6 +19,9 @@ export function Footer() {
           >
             <FaTwitter />
           </a>
+        </div>
+        <div className='mb-14 flex flex-row justify-center'>
+          <span className='text-sm'>All rights reserved © 2024 Kotaitos</span>
         </div>
       </Container>
     </footer>
