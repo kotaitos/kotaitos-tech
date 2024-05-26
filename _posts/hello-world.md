@@ -22,7 +22,7 @@ ogImage:
 
 ## (テスト)コードブロック
 
-```
+```Python
 print('hello')
 print('hello')print('hello')print('hello')print('hello')print('hello')print('hello')print('hello')print('hello')
 print('hello')
