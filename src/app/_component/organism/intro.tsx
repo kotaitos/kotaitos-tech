@@ -4,7 +4,14 @@ export function Intro() {
   return (
     <section className='flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12'>
       <section className='flex-col flex justify-left'>
-        <h1 className='text-5xl md:text-7xl font-bold tracking-tighter leading-tight'>
+        <h1
+          className='text-5xl md:text-7xl font-bold tracking-tighter leading-tight'
+          style={{
+            background: 'linear-gradient(135deg, #FFA07A, #FFD700)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}
+        >
           Kotaitos
           <br />
           Developer Blog.
