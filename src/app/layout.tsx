@@ -1,5 +1,4 @@
 import Footer from '@/app/_component/organism/footer';
-import { HOME_OG_IMAGE_URL } from '@/lib/constants';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
@@ -11,9 +10,6 @@ export const metadata: Metadata = {
   metadataBase: new URL('http://localhost'),
   title: 'Kotaitos Developer Blog',
   description: 'Kotaitos Developer Blog',
-  openGraph: {
-    images: [HOME_OG_IMAGE_URL],
-  },
 };
 
 export default function RootLayout({
