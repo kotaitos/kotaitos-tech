@@ -36,6 +36,10 @@ const config: Config = {
         tighter: '-.04em',
       },
       fontSize: {
+        '1xl': '1.5rem',
+        '2xl': '1.75rem',
+        '3xl': '2rem',
+        '4xl': '2.25rem',
         '5xl': '2.5rem',
         '6xl': '2.75rem',
         '7xl': '4.5rem',

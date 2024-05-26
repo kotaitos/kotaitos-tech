@@ -2,6 +2,7 @@
   "recommendations": [
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    "naumovs.color-highlight"
+    "naumovs.color-highlight",
+    "bradlc.vscode-tailwindcss"
   ]
 }
