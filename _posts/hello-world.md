@@ -1,13 +1,13 @@
 ---
 title: '開発ブログ始めました'
 excerpt: ''
-coverImage: '/assets/blog/hello-world/cover.jpg'
+coverImage: '/assets/blog/hello-world/cover.jpeg'
 date: '2024-05-25'
 author:
   name: Kotaitos
   picture: '/assets/myavatar.jpeg'
 ogImage:
-  url: '/assets/blog/hello-world/cover.jpg'
+  url: '/assets/blog/hello-world/cover.jpeg'
 ---
 
 ## はじめに
