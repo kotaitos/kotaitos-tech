@@ -1,10 +1,7 @@
 import type { Metadata } from 'next';
-import { usePathname } from 'next/navigation';
-import { useEffect } from 'react';
-import Script from 'next/script';
-import * as gtag from '@/lib/gtag';
 import Footer from '@/app/_component/organism/footer';
 import { Inter } from 'next/font/google';
+import Analytics from '@/app/_component/atom/analytics';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -20,12 +17,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const pathname = usePathname();
-
-  useEffect(() => {
-    gtag.pageview(pathname);
-  }, [pathname]);
-
   return (
     <html lang='en'>
       <head>
@@ -60,24 +51,9 @@ export default function RootLayout({
         />
         <meta name='theme-color' content='#000' />
         <link rel='alternate' type='application/rss+xml' href='/feed.xml' />
+        <Analytics />
       </head>
       <body className={inter.className}>
-        <Script
-          strategy='afterInteractive'
-          src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_MEASUREMENT_ID}`}
-        />
-        <Script
-          id='gtag-init'
-          strategy='afterInteractive'
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${gtag.GA_MEASUREMENT_ID}');
-            `,
-          }}
-        />
         <div className='min-h-screen'>{children}</div>
         <Footer />
       </body>
