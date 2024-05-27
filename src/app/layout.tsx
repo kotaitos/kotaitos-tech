@@ -1,11 +1,10 @@
 import type { Metadata } from 'next';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 import Script from 'next/script';
 import * as gtag from '@/lib/gtag';
 import Footer from '@/app/_component/organism/footer';
 import { Inter } from 'next/font/google';
-
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -21,16 +20,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const router = useRouter();
+  const pathname = usePathname();
+
   useEffect(() => {
-    const handleRouterChange = (url: any) => {
-      gtag.pageview(url);
-    };
-    router.events.on('routeChangeComplete', handleRouterChange);
-    return () => {
-      router.events.off('routeChangeComplete', handleRouterChange);
-    };
-  }, [router.events]);
+    gtag.pageview(pathname);
+  }, [pathname]);
+
   return (
     <html lang='en'>
       <head>
@@ -76,12 +71,11 @@ export default function RootLayout({
           strategy='afterInteractive'
           dangerouslySetInnerHTML={{
             __html: `
-           window.dataLayer = window.dataLayer || [];
-           function gtag(){dataLayer.push(arguments);}
-           gtag('js', new Date());
- 
-           gtag('config', '${gtag.GA_MEASUREMENT_ID}');
-           `,
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${gtag.GA_MEASUREMENT_ID}');
+            `,
           }}
         />
         <div className='min-h-screen'>{children}</div>
