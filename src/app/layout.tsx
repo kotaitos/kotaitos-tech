@@ -1,5 +1,9 @@
-import Footer from '@/app/_component/organism/footer';
 import type { Metadata } from 'next';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+import Script from 'next/script';
+import * as gtag from '@/lib/gtag';
+import Footer from '@/app/_component/organism/footer';
 import { Inter } from 'next/font/google';
 
 import './globals.css';
@@ -17,6 +21,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const router = useRouter();
+  useEffect(() => {
+    const handleRouterChange = (url: any) => {
+      gtag.pageview(url);
+    };
+    router.events.on('routeChangeComplete', handleRouterChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouterChange);
+    };
+  }, [router.events]);
   return (
     <html lang='en'>
       <head>
@@ -53,6 +67,23 @@ export default function RootLayout({
         <link rel='alternate' type='application/rss+xml' href='/feed.xml' />
       </head>
       <body className={inter.className}>
+        <Script
+          strategy='afterInteractive'
+          src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_MEASUREMENT_ID}`}
+        />
+        <Script
+          id='gtag-init'
+          strategy='afterInteractive'
+          dangerouslySetInnerHTML={{
+            __html: `
+           window.dataLayer = window.dataLayer || [];
+           function gtag(){dataLayer.push(arguments);}
+           gtag('js', new Date());
+ 
+           gtag('config', '${gtag.GA_MEASUREMENT_ID}');
+           `,
+          }}
+        />
         <div className='min-h-screen'>{children}</div>
         <Footer />
       </body>
