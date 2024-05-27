@@ -1,21 +1,24 @@
-import { remark } from 'remark';
-import html from 'remark-html';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { unified } from 'unified';
-import rehypeParse from 'rehype-parse';
 import rehypeStringify from 'rehype-stringify';
 import rehypeHighlight from 'rehype-highlight';
 import { visit } from 'unist-util-visit';
 import { Node } from 'unist';
 import { Element } from 'hast';
+import rehypeSlug from 'rehype-slug';
+import remarkParse from 'remark-parse';
+import remarkRehype from 'remark-rehype';
 
 export default async function markdownToHtml(
   markdown: string,
 ): Promise<string> {
-  const markdownToHtmlResult = await remark().use(html).process(markdown);
-
-  const highlightedHtml = await unified()
-    .use(rehypeParse, { fragment: true })
+  const result = await unified()
+    .use(remarkParse, { fragment: true })
+    .use(remarkRehype)
+    .use(rehypeSlug)
     .use(rehypeHighlight)
+    .use(rehypeStringify)
+    .use(rehypeAutolinkHeadings)
     .use(rehypeStringify)
     .use(() => {
       return (tree: Node) => {
@@ -26,7 +29,7 @@ export default async function markdownToHtml(
         });
       };
     })
-    .process(markdownToHtmlResult.toString());
+    .process(markdown);
 
-  return highlightedHtml.toString();
+  return result.toString();
 }
