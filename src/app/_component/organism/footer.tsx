@@ -3,7 +3,7 @@ import { FaTwitter, FaGithub } from 'react-icons/fa';
 
 export function Footer() {
   return (
-    <footer className='max-w-screen-lg mx-auto border-t'>
+    <footer className='border-t'>
       <Container>
         <div className='py-14 flex flex-row justify-center'>
           <a
