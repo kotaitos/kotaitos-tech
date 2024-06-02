@@ -11,7 +11,7 @@ type Props = {
   slug: string;
 };
 
-export default async function PostPage({ slug }: Props) {
+export default async function PostContentPage({ slug }: Props) {
   const post = getPostBySlug(slug);
 
   if (!post) {
