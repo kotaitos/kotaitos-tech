@@ -24,10 +24,14 @@ export default function Home() {
           slug={heroPost.slug}
           excerpt={heroPost.excerpt}
         />
-        <h2 className='mb-8 text-2xl md:text-4xl font-bold tracking-tighter leading-tight'>
-          🏊 More Stories
-        </h2>
-        {morePosts.length > 0 && <PostPreviews posts={morePosts} />}
+        {morePosts.length > 0 && (
+          <>
+            <h2 className='mb-8 text-2xl md:text-4xl font-bold tracking-tighter leading-tight'>
+              🏊 More Stories
+            </h2>
+            <PostPreviews posts={morePosts} />
+          </>
+        )}
       </Container>
     </main>
   );
