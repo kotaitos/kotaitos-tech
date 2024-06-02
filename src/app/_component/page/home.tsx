@@ -13,9 +13,8 @@ export default function Home() {
   const morePosts = allPosts.slice(1);
 
   return (
-    <main className='max-w-screen-lg mx-auto'>
+    <main>
       <Container>
-        <Header />
         <Intro />
         <About />
         <HeroPost

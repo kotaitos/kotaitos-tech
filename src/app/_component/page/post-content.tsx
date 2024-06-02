@@ -21,9 +21,8 @@ export default async function PostContentPage({ slug }: Props) {
   const content = await markdownToHtml(post.content || '');
 
   return (
-    <main className='max-w-screen-lg mx-auto'>
+    <main>
       <Container>
-        <Header />
         <article className='mb-32'>
           <PostHeader
             title={post.title}
