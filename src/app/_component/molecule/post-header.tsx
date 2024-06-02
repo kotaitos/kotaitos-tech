@@ -1,5 +1,5 @@
 import Avatar from '../atom/avatar';
-import CoverImage from '../molecule/cover-image';
+import CoverImage from './cover-image';
 import DateFormatter from '../atom/date-formatter';
 import { PostTitle } from '@/app/_component/atom/post-title';
 import { type Author } from '@/interface/author';

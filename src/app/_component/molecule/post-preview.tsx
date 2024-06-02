@@ -1,7 +1,7 @@
 import { type Author } from '@/interface/author';
 import Link from 'next/link';
 import Avatar from '../atom/avatar';
-import CoverImage from '../molecule/cover-image';
+import CoverImage from './cover-image';
 import DateFormatter from '../atom/date-formatter';
 
 type Props = {

@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import PostPage from '@/app/_component/page/post';
+import PostContentPage from '@/app/_component/page/post-content';
 import { getPostBySlug } from '@/lib/api';
 
 export default async function Post({ params }: Params) {
-  return <PostPage slug={params.slug} />;
+  return <PostContentPage slug={params.slug} />;
 }
 
 type Params = {
