@@ -23,8 +23,8 @@ export const Header = () => {
           Home
         </Link>
         <Link
-          href='/post'
-          className={`ml-6 text-dark-neautral ${isCurrentPage('/post') ? 'underline' : ''}`}
+          href='/posts'
+          className={`ml-6 text-dark-neautral ${isCurrentPage('/posts') ? 'underline' : ''}`}
         >
           Blog
         </Link>
