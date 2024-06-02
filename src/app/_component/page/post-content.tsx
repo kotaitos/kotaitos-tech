@@ -21,7 +21,7 @@ export default async function PostContentPage({ slug }: Props) {
   const content = await markdownToHtml(post.content || '');
 
   return (
-    <main>
+    <main className='mt-16'>
       <Container>
         <article className='mb-32'>
           <PostHeader
