@@ -3,6 +3,7 @@ import Footer from '@/app/_component/organism/footer';
 import { Inter } from 'next/font/google';
 import Analytics from '@/app/_component/atom/analytics';
 import './globals.css';
+import Header from '@/app/_component/organism/header';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -54,8 +55,11 @@ export default function RootLayout({
         <Analytics />
       </head>
       <body className={inter.className}>
-        <div className='min-h-screen'>{children}</div>
-        <Footer />
+        <div className='max-w-screen-lg mx-auto'>
+          <Header />
+          <div className='min-h-screen'>{children}</div>
+          <Footer />
+        </div>
       </body>
     </html>
   );

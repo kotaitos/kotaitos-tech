@@ -4,14 +4,14 @@ import { getAllPosts, getPostBySlug } from '@/lib/api';
 import markdownToHtml from '@/lib/markdownToHtml';
 import Container from '@/app/_component/template/container';
 import Header from '@/app/_component/organism/header';
-import { PostBody } from '@/app/_component/organism/post-body';
-import { PostHeader } from '@/app/_component/organism/post-header';
+import { PostBody } from '@/app/_component/molecule/post-body';
+import { PostHeader } from '@/app/_component/molecule/post-header';
 
 type Props = {
   slug: string;
 };
 
-export default async function PostPage({ slug }: Props) {
+export default async function PostContentPage({ slug }: Props) {
   const post = getPostBySlug(slug);
 
   if (!post) {
@@ -21,9 +21,8 @@ export default async function PostPage({ slug }: Props) {
   const content = await markdownToHtml(post.content || '');
 
   return (
-    <main className='max-w-screen-lg mx-auto'>
+    <main>
       <Container>
-        <Header />
         <article className='mb-32'>
           <PostHeader
             title={post.title}
