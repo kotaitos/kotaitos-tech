@@ -1,20 +1,35 @@
-import Link from 'next/link';
+'use client';
 
-const Header = () => {
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+export const Header = () => {
+  const pathname = usePathname();
+
+  const isCurrentPage = (path: string) => {
+    if (path === '/') {
+      return pathname === path;
+    }
+    return pathname.startsWith(path);
+  };
+
   return (
-    <h2
-      className='text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mb-20 mt-8'
-      style={{
-        background: 'linear-gradient(135deg, #FFA07A, #FFD700)',
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-      }}
-    >
-      <Link href='/' className='hover:underline'>
-        Kotaitos developer Blog
-      </Link>
-      .
-    </h2>
+    <div className='p-6 top-0 bg-dark-base-100'>
+      <nav className='hstack justify-between'>
+        <Link
+          href='/'
+          className={`text-dark-neautral ${isCurrentPage('/') ? 'underline' : ''}`}
+        >
+          Home
+        </Link>
+        <Link
+          href='/post'
+          className={`ml-6 text-dark-neautral ${isCurrentPage('/post') ? 'underline' : ''}`}
+        >
+          Blog
+        </Link>
+      </nav>
+    </div>
   );
 };
 

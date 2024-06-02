@@ -1,5 +1,6 @@
 import Container from '@/app/_component/template/container';
 import { HeroPost } from '@/app/_component/organism/hero-post';
+import { Header } from '@/app/_component/organism/header';
 import { Intro } from '@/app/_component/organism/intro';
 import { MoreStories } from '@/app/_component/organism/more-stories';
 import { getAllPosts } from '@/lib/api';
@@ -14,6 +15,7 @@ export default function Home() {
   return (
     <main className='max-w-screen-lg mx-auto'>
       <Container>
+        <Header />
         <Intro />
         <About />
         <HeroPost
